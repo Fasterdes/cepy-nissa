@@ -4,11 +4,7 @@ import axios from 'axios'
 export default function App() { 
   const { register, handleSubmit, reset } = useForm()
 
-  const api = axios.create({ 
-    baseURL : 'http://localhost:8000/api/v1/'
-  })
-
-  const addKehadiran = data => api.post('/kehadiran', data)
+  const addKehadiran = data => axios.post('/kehadiran', data)
 
   const PostKehadiran = async(data) => { 
     await addKehadiran(data)
