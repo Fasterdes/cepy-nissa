@@ -11,6 +11,6 @@ router.get('/' , (req , res) => {
 
 // Kehadiran controller api endpoint 
 router.get('/kehadiran' , KehadiranController.GetAllKehadiran)
-router.post('/kehadiran')
+router.post('/kehadiran'  , KehadiranController.PostKehadiran)
 
 module.exports = router
