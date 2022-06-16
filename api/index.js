@@ -22,6 +22,16 @@ process.env.NODE_ENV == "development"  && app.use(logger('dev'))
 // db connection
 connectDB()
 
+// production 
+app.use(express.static(path.join(__dirname, 'client', 'build')))
+app.get("/", (_, res) => {
+    res.sendFile(
+        path.join(__dirname, './client/build/index.html'),
+        function (err) {
+            err && res.status(500).send(err)
+        }
+    )
+})
 
 // api endpoint 
 app.use('/api/v1/' , router)
