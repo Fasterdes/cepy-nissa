@@ -5,6 +5,7 @@ const cors = require('cors')
 const helmet = require('helmet')
 const PORT = 8000
 const logger = require('morgan')
+const path = require('path')
 require('dotenv').config()
 
 const connectDB = require('../db/connect')
